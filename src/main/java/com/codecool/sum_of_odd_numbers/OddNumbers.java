@@ -5,6 +5,10 @@ import java.util.List;
 public class OddNumbers {
 
     public static Integer sum(List<Integer> numbers) {
-        return null;
+
+        numbers.removeIf(number -> number % 2 == 0);
+
+        return numbers.stream().mapToInt(Integer::intValue).sum();
+
     }
 }
